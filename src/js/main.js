@@ -16,7 +16,7 @@ var $filterHolder,
 	{filter: 'Rise'},
 	{filter: 'Rise'},
 	{filter: 'Rise'},
-		{filter: 'Rise'},
+	{filter: 'Rise'},
 	{filter: 'Rise'},
 	{filter: 'Rise'},
 	{filter: 'Rise'},
@@ -35,11 +35,10 @@ function addFilterBtns() {
 		label = $('<div class="filter-label">');
 		label.html(FILTER_LIST[i].filter);
 		button.append(label);
+		button.css('left', holder_width);
 		$filterHolder.append(button);
 		holder_width += 60;
 	}
-
-	$filterHolder.width(holder_width);
 }
 
 function handle_filterBtn_CLICK(e) {
