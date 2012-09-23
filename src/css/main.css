@@ -164,13 +164,81 @@ body{
     background-size: cover;
 }
 
-#photoFilter.softgray {
+/* ==========================================================================
+   Softgray
+   ========================================================================== */
+
+#filterContainer.softgray div {
     -webkit-filter: grayscale(1) blur(10px);
+}
+
+#filterContainer.softgray {
+    opacity:0.7;
 }
 
 #photoOrig.softgray {
     -webkit-filter: none;
 }
+
+
+/* ==========================================================================
+   Softblur
+   ========================================================================== */
+
+#filterContainer.softblur div {
+    -webkit-filter: blur(10px);
+}
+
+#filterContainer.softblur {
+    opacity:0.5;
+}
+
+#photoOrig.softblur {
+    -webkit-filter: none;
+}
+
+/* ==========================================================================
+   Black and white
+   ========================================================================== */
+
+#filterContainer.bnw div {
+    -webkit-filter: grayscale(1);
+}
+
+#filterContainer.bnw {
+    opacity:1;
+}
+
+#photoOrig.bnw {
+    -webkit-filter: none;
+}
+
+
+/* ==========================================================================
+   Old-style
+   ========================================================================== */
+
+#filterContainer.old-style div {
+    -webkit-filter: sepia(0.8) saturate(3) brightness(0.25) contrast(2);
+}
+
+#filterContainer.old-style {
+    opacity:0.9;
+}
+
+#photoOrig.oldstyle {
+    -webkit-filter: none;
+}
+
+#origContainer.old-style .photo{
+    background-image: url(../img/photo4.jpg);
+}
+
+#filterContainer.old-style .photo{
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo4.jpg);
+}
+
+
 
 /* ==========================================================================
    Helper classes
