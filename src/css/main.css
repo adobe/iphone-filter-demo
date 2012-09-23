@@ -148,6 +148,7 @@ body{
     border-radius: 10px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .filter-label{
@@ -229,15 +230,15 @@ body{
    ========================================================================== */
 
 #filterContainer.softblur div {
-    -webkit-filter: blur(10px);
+    -webkit-filter: blur(10px) grayscale(0.8);
 }
 
 #filterContainer.softblur {
     opacity:0.5;
 }
 
-#photoOrig.softblur {
-    -webkit-filter: none;
+#origContainer.softblur #photoOrig {
+    -webkit-filter: grayscale(0.8);
 }
 
 /* ==========================================================================
