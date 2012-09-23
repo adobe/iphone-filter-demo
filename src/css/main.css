@@ -208,16 +208,6 @@ body{
     background-image: url(../img/thumbnails/thumb_blur.png);
 }
 
-
-    {name: 'Normal', cl:'normal'},
-    {name: 'B & W', cl:'bnw'},
-    {name: 'Old Style', cl:'old-style'},
-    {name: 'Saturate', cl:'saturate'},
-    {name: 'Vincent', cl:'blue'},
-    {name: 'Arno', cl:'red'},
-    {name: 'Ethan', cl:'green'},
-    {name: 'Soft Blur', cl:'softblur'}
-
 /* ==========================================================================
    Softgray
    ========================================================================== */
