@@ -119,11 +119,13 @@ body{
 
 #selectedNotifier{
     position: absolute;
-    width: 7px;
-    height: 4px;
+    width: 8px;
+    height: 6px;
     bottom: -15px;
     left: 0px;
-    background: white;
+    background-image: url(../img/selected.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
     -webkit-transform: translate3d(25px, 0px, 0px);
     -webkit-transition: all .4s;
 }
@@ -139,6 +141,7 @@ body{
     background-size: cover;
     border-radius: 10px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .filter-label{
@@ -149,6 +152,7 @@ body{
     width: 100%;
     text-align:center;
     color: white;
+    font-weight: bold;
     font-size: 10px;
     text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
     -webkit-box-reflect: below -5px -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.5)));

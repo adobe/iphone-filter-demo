@@ -6,17 +6,7 @@ var $filterHolder,
 	{name: 'Soft Blur', cl:'softblur'},
 	{name: 'B & W', cl:'bnw'},
 	{name: 'Old Style', cl:'old-style'},
-	{name: 'Saturate', cl:'saturate'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'},
-	{name: 'Rise', cl:'test1'}
+	{name: 'Saturate', cl:'saturate'}
 ];
 
 
@@ -49,22 +39,36 @@ function handle_filterBtn_CLICK(e) {
 	newLeft = $element.position().left + $element.width() / 2 + $selectedNotifier.width() / 2;
 	$selectedNotifier.css('-webkit-transform', 'translate3d(' + newLeft + 'px, 0px, 0px)');
 
-	//remove classes
-	$origContainer.removeClass();
-	$filterContainer.removeClass();
 
-	//add filter classes
-	$origContainer.addClass($element.data('filter'));
-	$filterContainer.addClass($element.data('filter'));
+
+	setTimeout(function () {
+		//remove classes
+		$origContainer.removeClass();
+		$filterContainer.removeClass();
+
+		//add filter classes
+		$origContainer.addClass($element.data('filter'));
+		$filterContainer.addClass($element.data('filter'));
+	}, 400);
 }
 
 function init() {
 	$filterHolder = $('#filterHolder');
 	$slideHitArea = $('#slideHitArea');
 
+
 	$('document').bind('touchstart', function (e) {
 		e.preventDefault();
-	})
+	});
+
+	$('body').bind('touchmove', function (e) {
+		e.preventDefault();
+	});
+	
+	$('#filterHolder').bind('touchmove', function (e) {
+		//e.stopImmediatePropagation();
+		e.stopPropagation();
+	});
 
 	addFilterBtns();
 	$('.filter-btn').bind('click', handle_filterBtn_CLICK)
