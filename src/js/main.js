@@ -42,8 +42,6 @@ function handle_filterBtn_CLICK(e) {
 	newLeft = $element.position().left + $element.width() / 2;
 	$selectedNotifier.css('-webkit-transform', 'translate3d(' + newLeft + 'px, 0px, 0px)');
 
-
-
 	setTimeout(function () {
 		//remove classes
 		$origContainer.removeClass();
