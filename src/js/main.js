@@ -1,26 +1,26 @@
 
 var $filterHolder,
 	FILTER_LIST = [
-	{filter: 'Normal'},
-	{filter: 'Amaro'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Rise'},
-	{filter: 'Hudson'}
+	{filter: 'Normal', cl:'test1'},
+	{filter: 'Amaro', cl:'test2'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Rise', cl:'test1'},
+	{filter: 'Hudson', cl:'test1'}
 ];
 
 
@@ -37,6 +37,7 @@ function addFilterBtns() {
 		button.append(label);
 		button.css('left', holder_width);
 		$slideHitArea.append(button);
+		$slideHitArea.width(holder_width);
 		holder_width += 60;
 	}
 }
