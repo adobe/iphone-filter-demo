@@ -130,6 +130,13 @@ body{
     -webkit-transition: all .4s;
 }
 
+#photoHolder{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
 .filter-btn{
     position: absolute;
     display: block;
@@ -137,7 +144,6 @@ body{
     height: 50px;
     width: 50px;
     background-color: white;
-    background-image: url(../img/photo1.jpg);
     background-size: cover;
     border-radius: 10px;
     cursor: pointer;
@@ -160,13 +166,6 @@ body{
     -webkit-user-select: none;
 }
 
-#photoHolder{
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    overflow: hidden;
-}
-
 .photo{
     position: absolute;
     width: 100%;
@@ -174,7 +173,50 @@ body{
     background-image: url(../img/photo2.jpg);
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: contain;
 }
+
+#normal{
+    background-image: url(../img/thumbnails/thumb_normal.png);
+}
+
+#bnw{
+    background-image: url(../img/thumbnails/thumb_bw.png);
+}
+
+#old-style{
+    background-image: url(../img/thumbnails/thumb_old.png);
+}
+
+#saturate{
+    background-image: url(../img/thumbnails/thumb_saturate.png);
+}
+
+#blue{
+    background-image: url(../img/thumbnails/thumb_vincent.png);
+}
+
+#red{
+    background-image: url(../img/thumbnails/thumb_arno.png);
+}
+
+#green{
+    background-image: url(../img/thumbnails/thumb_ethan.png);
+}
+
+#softblur{
+    background-image: url(../img/thumbnails/thumb_blur.png);
+}
+
+
+    {name: 'Normal', cl:'normal'},
+    {name: 'B & W', cl:'bnw'},
+    {name: 'Old Style', cl:'old-style'},
+    {name: 'Saturate', cl:'saturate'},
+    {name: 'Vincent', cl:'blue'},
+    {name: 'Arno', cl:'red'},
+    {name: 'Ethan', cl:'green'},
+    {name: 'Soft Blur', cl:'softblur'}
 
 /* ==========================================================================
    Softgray
@@ -268,11 +310,72 @@ body{
 }
 
 #origContainer.saturate .photo{
-    background-image: url(../img/photo4.jpg);
+    background-image: url(../img/photo2.jpg);
 }
 
 #filterContainer.saturate .photo{
     background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.3) 100%), url(../img/photo2.jpg);
+}
+
+/* ==========================================================================
+   Hue Blue
+   ========================================================================== */
+
+#filterContainer.blue div {
+    -webkit-filter: hue-rotate(40deg) contrast(3);
+}
+
+#filterContainer.blue {
+    opacity:0.5;
+}
+
+#photoOrig.oldstyle {
+    -webkit-filter: none;
+}
+
+#origContainer.blue .photo{
+    background-image: url(../img/photo2.jpg);
+}
+
+
+/* ==========================================================================
+   Hue Red
+   ========================================================================== */
+
+#filterContainer.red div {
+    -webkit-filter: hue-rotate(200deg) contrast(1.2) saturate(2);
+}
+
+#filterContainer.red {
+    opacity:0.7;
+}
+
+#photoOrig.oldstyle {
+    -webkit-filter: none;
+}
+
+#origContainer.red .photo{
+    background-image: url(../img/photo2.jpg);
+}
+
+/* ==========================================================================
+   Hue Green
+   ========================================================================== */
+
+#filterContainer.green div {
+    -webkit-filter: hue-rotate(260deg) contrast(1.2);
+}
+
+#filterContainer.green {
+    opacity:0.5;
+}
+
+#photoOrig.oldstyle {
+    -webkit-filter: none;
+}
+
+#origContainer.green .photo{
+    background-image: url(../img/photo2.jpg);
 }
 
 

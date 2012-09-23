@@ -1,12 +1,14 @@
 
 var $filterHolder,
 	FILTER_LIST = [
-	{name: 'Normal', cl:'test1'},
-	{name: 'Amaro', cl:'test2'},
-	{name: 'Soft Blur', cl:'softblur'},
+	{name: 'Normal', cl:'normal'},
 	{name: 'B & W', cl:'bnw'},
 	{name: 'Old Style', cl:'old-style'},
-	{name: 'Saturate', cl:'saturate'}
+	{name: 'Saturate', cl:'saturate'},
+	{name: 'Vincent', cl:'blue'},
+	{name: 'Arno', cl:'red'},
+	{name: 'Ethan', cl:'green'},
+	{name: 'Soft Blur', cl:'softblur'}
 ];
 
 
@@ -21,6 +23,7 @@ function addFilterBtns() {
 		label = $('<div class="filter-label">');
 		label.html(FILTER_LIST[i].name);
 		button.append(label);
+		button.attr('id', FILTER_LIST[i].cl)
 		button.css('left', holder_width)
 		button.data('filter', FILTER_LIST[i].cl);
 		$slideHitArea.append(button);
@@ -64,7 +67,7 @@ function init() {
 	$('body').bind('touchmove', function (e) {
 		e.preventDefault();
 	});
-	
+
 	$('#filterHolder').bind('touchmove', function (e) {
 		//e.stopImmediatePropagation();
 		e.stopPropagation();
