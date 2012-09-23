@@ -243,7 +243,7 @@ body{
 }
 
 #filterContainer.old-style .photo{
-    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo4.jpg);
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo2.jpg);
 }
 
 
@@ -252,7 +252,7 @@ body{
    ========================================================================== */
 
 #filterContainer.saturate div {
-    -webkit-filter: sepia(0.2) saturate(1.5) contrast(1.2);
+    -webkit-filter: sepia(0.2) saturate(3) contrast(1.2);
 }
 
 #filterContainer.saturate {
@@ -268,7 +268,7 @@ body{
 }
 
 #filterContainer.saturate .photo{
-    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.3) 100%), url(../img/photo4.jpg);
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.3) 100%), url(../img/photo2.jpg);
 }
 
 
