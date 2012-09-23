@@ -62,6 +62,10 @@ function init() {
 	$filterHolder = $('#filterHolder');
 	$slideHitArea = $('#slideHitArea');
 
+	$('document').bind('touchstart', function (e) {
+		e.preventDefault();
+	})
+
 	addFilterBtns();
 	$('.filter-btn').bind('click', handle_filterBtn_CLICK)
 }
