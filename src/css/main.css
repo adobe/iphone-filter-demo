@@ -239,11 +239,36 @@ body{
 }
 
 #origContainer.old-style .photo{
-    background-image: url(../img/photo4.jpg);
+    background-image: url(../img/photo2.jpg);
 }
 
 #filterContainer.old-style .photo{
-    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo4.jpg);
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo2.jpg);
+}
+
+
+/* ==========================================================================
+   Saturate
+   ========================================================================== */
+
+#filterContainer.saturate div {
+    -webkit-filter: sepia(0.2) saturate(3) contrast(1.2);
+}
+
+#filterContainer.saturate {
+    opacity:1;
+}
+
+#photoOrig.oldstyle {
+    -webkit-filter: none;
+}
+
+#origContainer.saturate .photo{
+    background-image: url(../img/photo4.jpg);
+}
+
+#filterContainer.saturate .photo{
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.3) 100%), url(../img/photo2.jpg);
 }
 
 
