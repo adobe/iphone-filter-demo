@@ -164,6 +164,13 @@ body{
     background-size: cover;
 }
 
+#photoFilter.softgray {
+    -webkit-filter: grayscale(1) blur(10px);
+}
+
+#photoOrig.softgray {
+    -webkit-filter: none;
+}
 
 /* ==========================================================================
    Helper classes
