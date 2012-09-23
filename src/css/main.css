@@ -148,10 +148,6 @@ body{
     border-radius: 10px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    border-top: 1px solid rgba(255, 255, 255, 1);
-    border-left: 1px solid rgba(255, 255, 255, 1);
-    border-bottom: 1px solid rgba(120, 120, 120, 1);
-    border-right: 1px solid rgba(120, 120, 120, 1);
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
