@@ -1,26 +1,22 @@
 
 var $filterHolder,
 	FILTER_LIST = [
-	{filter: 'Normal', cl:'test1'},
-	{filter: 'Amaro', cl:'test2'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Rise', cl:'test1'},
-	{filter: 'Hudson', cl:'test1'}
+	{name: 'Normal', cl:'test1'},
+	{name: 'Amaro', cl:'test2'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'},
+	{name: 'Rise', cl:'test1'}
 ];
 
 
@@ -33,9 +29,10 @@ function addFilterBtns() {
 	for (i; i < FILTER_LIST.length; i += 1) {
 		button = $('<div class="filter-btn">');
 		label = $('<div class="filter-label">');
-		label.html(FILTER_LIST[i].filter);
+		label.html(FILTER_LIST[i].name);
 		button.append(label);
-		button.css('left', holder_width);
+		button.css('left', holder_width)
+		button.data('filter', FILTER_LIST[i].cl);
 		$slideHitArea.append(button);
 		$slideHitArea.width(holder_width);
 		holder_width += 60;
@@ -45,12 +42,20 @@ function addFilterBtns() {
 function handle_filterBtn_CLICK(e) {
 	var $element = $(this),
 		newLeft,
-		$selectedNotifier = $('#selectedNotifier');
+		$selectedNotifier = $('#selectedNotifier'),
+		$origContainer = $('#origContainer'),
+		$filterContainer = $('#filterContainer');
 
 	newLeft = $element.position().left + $element.width() / 2 + $selectedNotifier.width() / 2;
 	$selectedNotifier.css('-webkit-transform', 'translate3d(' + newLeft + 'px, 0px, 0px)');
 
-	//$selectedNotifier.css('left', newLeft);
+	//remove classes
+	$origContainer.removeClass();
+	$filterContainer.removeClass();
+
+	//add filter classes
+	$origContainer.addClass($element.data('filter'));
+	$filterContainer.addClass($element.data('filter'));
 }
 
 function init() {
