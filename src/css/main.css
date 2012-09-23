@@ -185,6 +185,10 @@ body{
     background-image: url(../img/thumbnails/thumb_bw.png);
 }
 
+#sepia{
+    background-image: url(../img/thumbnails/thumb_sepia.png);
+}
+
 #old-style{
     background-image: url(../img/thumbnails/thumb_old.png);
 }
@@ -268,8 +272,32 @@ body{
 #filterContainer.old-style {
     opacity:0.9;
 }
-
+/*
 #photoOrig.oldstyle {
+    -webkit-filter: none;
+}
+
+#origContainer.old-style .photo{
+    background-image: url(../img/photo2.jpg);
+}
+*/
+#filterContainer.old-style .photo{
+    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo8.png);
+}
+
+/* ==========================================================================
+   Sepia
+   ========================================================================== */
+
+#filterContainer.sepia div {
+    -webkit-filter: sepia(1.0);
+}
+
+#filterContainer.sepia {
+    opacity:0.8;
+}
+
+#photoOrig.sepia {
     -webkit-filter: none;
 }
 /*

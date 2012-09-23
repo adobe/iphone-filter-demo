@@ -3,6 +3,7 @@ var $filterHolder,
 	FILTER_LIST = [
 	{name: 'Normal', cl:'normal'},
 	{name: 'B & W', cl:'bnw'},
+	{name: 'Sepia', cl:'sepia'},
 	{name: 'Old Style', cl:'old-style'},
 	{name: 'Saturate', cl:'saturate'},
 	{name: 'Vincent', cl:'blue'},
