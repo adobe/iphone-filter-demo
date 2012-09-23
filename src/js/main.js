@@ -36,22 +36,25 @@ function addFilterBtns() {
 		label.html(FILTER_LIST[i].filter);
 		button.append(label);
 		button.css('left', holder_width);
-		$filterHolder.append(button);
+		$slideHitArea.append(button);
 		holder_width += 60;
 	}
 }
 
 function handle_filterBtn_CLICK(e) {
-	var element = $(this),
+	var $element = $(this),
 		newLeft,
 		$selectedNotifier = $('#selectedNotifier');
 
-	newLeft = element.position().left + element.width() / 2 + $selectedNotifier.width() / 2;
-	$selectedNotifier.css('left', newLeft);
+	newLeft = $element.position().left + $element.width() / 2 + $selectedNotifier.width() / 2;
+	$selectedNotifier.css('-webkit-transform', 'translate3d(' + newLeft + 'px, 0px, 0px)');
+
+	//$selectedNotifier.css('left', newLeft);
 }
 
 function init() {
 	$filterHolder = $('#filterHolder');
+	$slideHitArea = $('#slideHitArea');
 
 	addFilterBtns();
 	$('.filter-btn').bind('click', handle_filterBtn_CLICK)
