@@ -1,26 +1,61 @@
 
 var $filterHolder,
+	PHOTO = 'url(./img/photo8.png)',
 	FILTER_LIST = [
-	{name: 'Normal', cl:'normal'},
-	{name: 'B & W', cl:'bnw'},
-	{name: 'Sepia', cl:'sepia'},
-	{name: 'Saturate', cl:'saturate'},
-	{name: 'Old Style', cl:'old-style'},
-	{name: 'Vincent', cl:'blue'},
-	{name: 'Arno', cl:'red'},
-	{name: 'Ethan', cl:'green'},
-	{name: 'Soft Blur', cl:'softblur'}
-	],
-	FILTER_VALUES = [
-		{name: 'normal', filterA:'none', filterB: 'none', opacityA: '1'},
-		{name: 'bnw', filterA:'grayscale(1)', filterB: 'none', opacityA: '1'},
-		{name: 'sepia', filterA:'sepia(1.0)', filterB: 'none', opacityA: '0.8'},
-		{name: 'saturate', filterA:'sepia(0.2) saturate(3) contrast(1.2)', filterB: '', opacityA: '0.8'},
-		{name: 'old-style', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
-		{name: 'blue', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
-		{name: 'red', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
-		{name: 'green', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
-		{name: 'softblur', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'}
+		{name: 'Normal', 
+			cl: 'normal',
+			filterA:'none', 
+			filterB: 'none', 
+			opacityA: '1', 
+			background: ''},
+		{name: 'B & W',
+			cl: 'bnw', 
+			filterA:'grayscale(1)', 
+			filterB: 'none', 
+			opacityA: '1', 
+			background: ''},
+		{name: 'Sepia',
+			cl: 'sepia', 
+			filterA:'sepia(1.0)', 
+			filterB: 'none', 
+			opacityA: '0.8', 
+			background: ''},
+		{name: 'Saturate',
+			cl: 'saturate', 
+			filterA:'sepia(0.2) saturate(3) contrast(1.2)', 
+			filterB: 'none', 
+			opacityA: '1', 
+			background: '-webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.3) 100%), '},
+		{name: 'Old Style',
+			cl: 'old-style', 
+			filterA:'sepia(0.8) saturate(3) brightness(0.25) contrast(2)', 
+			filterB: 'none', 
+			opacityA: '0.9', 
+			background: '-webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), '},
+		{name: 'Vincent',
+			cl: 'blue', 
+			filterA:'hue-rotate(40deg) contrast(3)', 
+			filterB: 'none', 
+			opacityA: '0.5', 
+			background: ''},
+		{name: 'Arno',
+			cl: 'red', 
+			filterA:'hue-rotate(200deg) contrast(1.2) saturate(2)', 
+			filterB: 'none', 
+			opacityA: '0.7', 
+			background: ''},
+		{name: 'Ethan',
+			cl: 'green', 
+			filterA:'hue-rotate(260deg) contrast(1.2)', 
+			filterB: 'none', 
+			opacityA: '0.8', 
+			background: ''},
+		{name: 'Soft Blur',
+			cl: 'softblur', 
+			filterA:'blur(10px) grayscale(0.8)', 
+			filterB: 'grayscale(0.8)', 
+			opacityA: '0.5', 
+			background: ''}
 	];
 
 
@@ -37,7 +72,7 @@ function addFilterBtns() {
 		button.append(label);
 		button.attr('id', FILTER_LIST[i].cl)
 		button.css('left', holder_width)
-		button.data('filter', FILTER_LIST[i].cl);
+		button.data('filter', i);
 		$slideHitArea.append(button);
 		$slideHitArea.width(holder_width);
 		holder_width += 60;
@@ -49,20 +84,15 @@ function handle_filterBtn_CLICK(e) {
 		newLeft,
 		$selectedNotifier = $('#selectedNotifier'),
 		$origContainer = $('#origContainer'),
-		$filterContainer = $('#filterContainer');
+		$filterContainer = $('#filterContainer'),
+		id = $element.data('filter');
 
 	newLeft = $element.position().left + $element.width() / 2;
 	$selectedNotifier.css('-webkit-transform', 'translate3d(' + newLeft + 'px, 0px, 0px)');
 
-	//setTimeout(function () {
-		//remove classes
-		$origContainer.removeClass();
-		$filterContainer.removeClass();
-
-		//add filter classes
-		$origContainer.addClass($element.data('filter'));
-		$filterContainer.addClass($element.data('filter'));
-	//}, 400);
+	$('#photoOrig').css({'-webkit-filter': FILTER_LIST[id].filterB, 'background-image': FILTER_LIST[id].background + PHOTO});
+	$filterContainer.css({'opacity': FILTER_LIST[id].opacityA});
+	$('#photoFilter').css({'-webkit-filter': FILTER_LIST[id].filterA, 'background-image': FILTER_LIST[id].background + PHOTO});
 }
 
 function init() {

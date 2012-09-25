@@ -98,6 +98,16 @@ body{
     overflow: hidden;
 }
 
+#loader{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background:-webkit-radial-gradient(circle, white, #ccc);;    
+}
+
 #filterHolder{
     position: absolute;
     bottom: 0px;
@@ -145,6 +155,8 @@ body{
     width: 50px;
     background-color: black;
     background-size: cover;
+    background-image: url(../img/thumbnails/thumb.jpg);
+    background-repeat: no-repeat;
     border-radius: 10px;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
@@ -178,223 +190,41 @@ body{
 }
 
 #normal{
-    background-image: url(../img/thumbnails/thumb_normal.png);
+    background-position: -200px 0px;
 }
 
 #bnw{
-    background-image: url(../img/thumbnails/thumb_bw.png);
+    background-position: -300px 0px;
 }
 
 #sepia{
-    background-image: url(../img/thumbnails/thumb_sepia.png);
+    background-position: -50px 0px;
 }
 
 #old-style{
-    background-image: url(../img/thumbnails/thumb_old.png);
+    background-position: -150px 0px;
 }
 
 #saturate{
-    background-image: url(../img/thumbnails/thumb_saturate.png);
+    background-position: -100px 0px;
 }
 
 #blue{
-    background-image: url(../img/thumbnails/thumb_vincent.png);
+    background-position: 0px 0px;
 }
 
 #red{
-    background-image: url(../img/thumbnails/thumb_arno.png);
+    background-position: -400px 0px;
 }
 
 #green{
-    background-image: url(../img/thumbnails/thumb_ethan.png);
+    background-position: -250px 0px;
 }
 
 #softblur{
-    background-image: url(../img/thumbnails/thumb_blur.png);
+    background-position: -350px 0px;
 }
 
-/* ==========================================================================
-   Softgray
-   ========================================================================== */
-
-#filterContainer.softgray div {
-    -webkit-filter: grayscale(1) blur(10px);
-}
-
-#filterContainer.softgray {
-    opacity:0.7;
-}
-
-#photoOrig.softgray {
-    -webkit-filter: none;
-}
-
-/* ==========================================================================
-   Softblur
-   ========================================================================== */
-
-#filterContainer.softblur div {
-    -webkit-filter: blur(10px) grayscale(0.8);
-}
-
-#filterContainer.softblur {
-    opacity:0.5;
-}
-
-#origContainer.softblur #photoOrig {
-    -webkit-filter: grayscale(0.8);
-}
-
-/* ==========================================================================
-   Black and white
-   ========================================================================== */
-
-#filterContainer.bnw div {
-    -webkit-filter: grayscale(1);
-}
-
-#filterContainer.bnw {
-    opacity:1;
-}
-
-#photoOrig.bnw {
-    -webkit-filter: none;
-}
-
-/* ==========================================================================
-   Old-style
-   ========================================================================== */
-
-#filterContainer.old-style div {
-    -webkit-filter: sepia(0.8) saturate(3) brightness(0.25) contrast(2);
-}
-
-#filterContainer.old-style {
-    opacity:0.9;
-}
-/*
-#photoOrig.oldstyle {
-    -webkit-filter: none;
-}
-
-#origContainer.old-style .photo{
-    background-image: url(../img/photo2.jpg);
-}
-*/
-#filterContainer.old-style .photo{
-    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo8.png);
-}
-
-/* ==========================================================================
-   Sepia
-   ========================================================================== */
-
-#filterContainer.sepia div {
-    -webkit-filter: sepia(1.0);
-}
-
-#filterContainer.sepia {
-    opacity:0.8;
-}
-
-#photoOrig.sepia {
-    -webkit-filter: none;
-}
-/*
-#origContainer.old-style .photo{
-    background-image: url(../img/photo2.jpg);
-}
-*/
-#filterContainer.old-style .photo{
-    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%), url(../img/photo8.png);
-}
-
-/* ==========================================================================
-   Saturate
-   ========================================================================== */
-
-#filterContainer.saturate div {
-    -webkit-filter: sepia(0.2) saturate(3) contrast(1.2);
-}
-
-#filterContainer.saturate {
-    opacity:1;
-}
-
-#photoOrig.oldstyle {
-    -webkit-filter: none;
-}
-/*
-#origContainer.saturate .photo{
-    background-image: url(../img/photo2.jpg);
-}
-*/
-#filterContainer.saturate .photo{
-    background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 81%,rgba(0,0,0,0.3) 100%), url(../img/photo8.png);
-}
-
-/* ==========================================================================
-   Hue Blue
-   ========================================================================== */
-
-#filterContainer.blue div {
-    -webkit-filter: hue-rotate(40deg) contrast(3);
-}
-
-#filterContainer.blue {
-    opacity:0.5;
-}
-
-#photoOrig.oldstyle {
-    -webkit-filter: none;
-}
-/*
-#origContainer.blue .photo{
-    background-image: url(../img/photo2.jpg);
-}
-*/
-
-/* ==========================================================================
-   Hue Red
-   ========================================================================== */
-
-#filterContainer.red div {
-    -webkit-filter: hue-rotate(200deg) contrast(1.2) saturate(2);
-}
-
-#filterContainer.red {
-    opacity:0.7;
-}
-
-#photoOrig.oldstyle {
-    -webkit-filter: none;
-}
-/*
-#origContainer.red .photo{
-    background-image: url(../img/photo2.jpg);
-}
-*/
-
-/* ==========================================================================
-   Hue Green
-   ========================================================================== */
-
-#filterContainer.green div {
-    -webkit-filter: hue-rotate(260deg) contrast(1.2);
-}
-
-#filterContainer.green {
-    opacity:0.5;
-}
-
-#photoOrig.oldstyle {
-    -webkit-filter: none;
-}
-/*
-#origContainer.green .photo{
-    background-image: url(../img/photo2.jpg);
-}
-*/
 
 /* ==========================================================================
    Helper classes
