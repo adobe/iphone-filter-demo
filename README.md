@@ -1,4 +1,4 @@
-ipad-filter-demo
+iphone-filter-demo
 ================
 
-demo for create the web showcasing filters on iPad
+demo for create the web showcasing filters on iPhone
