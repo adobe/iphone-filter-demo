@@ -108,6 +108,19 @@ body{
     background:-webkit-radial-gradient(circle, white, #ccc);;    
 }
 
+#spinner{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+    width: 100px;
+    height: 100px;
+    background: url(../img/spinner.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 #filterHolder{
     position: absolute;
     bottom: 0px;
