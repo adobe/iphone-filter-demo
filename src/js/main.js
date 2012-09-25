@@ -10,7 +10,18 @@ var $filterHolder,
 	{name: 'Arno', cl:'red'},
 	{name: 'Ethan', cl:'green'},
 	{name: 'Soft Blur', cl:'softblur'}
-];
+	],
+	FILTER_VALUES = [
+		{name: 'normal', filterA:'none', filterB: 'none', opacityA: '1'},
+		{name: 'bnw', filterA:'grayscale(1)', filterB: 'none', opacityA: '1'},
+		{name: 'sepia', filterA:'sepia(1.0)', filterB: 'none', opacityA: '0.8'},
+		{name: 'saturate', filterA:'sepia(0.2) saturate(3) contrast(1.2)', filterB: '', opacityA: '0.8'},
+		{name: 'old-style', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
+		{name: 'blue', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
+		{name: 'red', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
+		{name: 'green', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'},
+		{name: 'softblur', filterA:'sepia(1.0)', filterB: '', opacityA: '0.8'}
+	];
 
 
 function addFilterBtns() {
