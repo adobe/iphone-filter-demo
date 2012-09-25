@@ -1,6 +1,6 @@
 
 var $filterHolder,
-	PHOTO = 'url(./img/photo8.png)',
+	PHOTO = './img/photo8.png',
 	FILTER_LIST = [
 		{name: 'Normal', 
 			cl: 'normal',
@@ -85,14 +85,20 @@ function handle_filterBtn_CLICK(e) {
 		$selectedNotifier = $('#selectedNotifier'),
 		$origContainer = $('#origContainer'),
 		$filterContainer = $('#filterContainer'),
+		$orig = $('#photoOrig'),
+		$filter = $('#photoFilter'),
 		id = $element.data('filter');
 
 	newLeft = $element.position().left + $element.width() / 2;
 	$selectedNotifier.css('-webkit-transform', 'translate3d(' + newLeft + 'px, 0px, 0px)');
-
-	$('#photoOrig').css({'-webkit-filter': FILTER_LIST[id].filterB, 'background-image': FILTER_LIST[id].background + PHOTO});
+	$orig.css({'background-image': FILTER_LIST[id].background + 'url(' + PHOTO + ')'});
+	$filter.css({'background-image': FILTER_LIST[id].background + 'url(' + PHOTO + ')'});
 	$filterContainer.css({'opacity': FILTER_LIST[id].opacityA});
-	$('#photoFilter').css({'-webkit-filter': FILTER_LIST[id].filterA, 'background-image': FILTER_LIST[id].background + PHOTO});
+
+	//setTimeout(function () {
+	$orig.css({'-webkit-filter': FILTER_LIST[id].filterB});
+	$filter.css({'-webkit-filter': FILTER_LIST[id].filterA});
+	//}, 400);
 }
 
 function init() {
@@ -115,6 +121,12 @@ function init() {
 
 	addFilterBtns();
 	$('.filter-btn').bind('click', handle_filterBtn_CLICK)
+
+	var BIG_IMAGE = new Image();
+	BIG_IMAGE.src = PHOTO;
+	BIG_IMAGE.onload = function () {
+		$('#loader').fadeOut();
+	}
 }
 
 $(document).ready(init);
