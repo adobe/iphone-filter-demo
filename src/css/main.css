@@ -199,7 +199,9 @@ body{
     background-image: url(../img/photo8.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover;        
+    /* force hw acceletation for filters */
+    -webkit-transform: translateZ(0);
 }
 
 #normal{

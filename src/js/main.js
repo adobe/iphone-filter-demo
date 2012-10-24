@@ -120,6 +120,7 @@ function init() {
 	});
 
 	addFilterBtns();
+	$('.filter-btn').bind('touchstart', handle_filterBtn_CLICK)
 	$('.filter-btn').bind('click', handle_filterBtn_CLICK)
 
 	var BIG_IMAGE = new Image();
