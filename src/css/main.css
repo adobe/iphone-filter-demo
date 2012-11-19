@@ -201,7 +201,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;        
     /* force hw acceletation for filters */
-    -webkit-transform: translateZ(0);
+    /*-webkit-transform: translateZ(0);*/  /*NOTE: breaks old style filter on iPhone*/
 }
 
 #normal{

@@ -121,11 +121,14 @@ function init() {
 
 	addFilterBtns();
 	
+	/*
 	$('.filter-btn').each(function(index, el){
 	    // make buttons emit tap events, includes fallback to click
 	    new Tap(el)                    
 	    el.addEventListener('tap', handle_filterBtn_CLICK)
 	})
+	*/
+	$('.filter-btn').click(handle_filterBtn_CLICK);
 
 	var BIG_IMAGE = new Image();
 	BIG_IMAGE.src = PHOTO;
